@@ -1,90 +1,102 @@
 import {Injectable} from '@angular/core';
 
 export class Product {
-  constructor(
-      public id: number,
-      public title: string,
-      public price: number,
-      public rating: number,
-      public description: string,
-      public categories: string[]) {
-  }
+    constructor(
+        public id: number,
+        public title: string,
+        public price: number,
+        public rating: number,
+        public description: string,
+        public image: string,
+        public categories: string[]) {
+    }
 }
 
 export class Review {
-  constructor(
-      public id: number,
-      public productId: number,
-      public timestamp: Date,
-      public user: string,
-      public rating: number,
-      public comment: string) {
-  }
+    constructor(
+        public id: number,
+        public productId: number,
+        public timestamp: Date,
+        public user: string,
+        public rating: number,
+        public image: string,
+        public comment: string) {
+    }
 }
 
 @Injectable()
 export class ProductService {
-  getProducts(): Product[] {
-    return products.map(p => new Product(p.id, p.title, p.price, p.rating, p.description, p.categories));
-  }
+    getProducts(): Product[] {
+        return products.map(p => new Product(p.id, p.title, p.price, p.rating, p.description, p.image ,p.categories));
+    }
 
-  getProductById(productId: number): Product {
-    return products.find(p => p.id === productId);
-  }
+    getProductById(productId: number): Product {
+        return products.find(p => p.id === productId);
+    }
 
-  getReviewsForProduct(productId: number): Review[] {
-    return reviews
-        .filter(r => r.productId === productId)
-        .map(r => new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment));
-  }
+    getReviewsForProduct(productId: number): Review[] {
+        return reviews
+            .filter(r => r.productId === productId)
+            .map(r => new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.image, r.comment));
+    }
+
+    getAllCategories(): string[] {
+        return ['Board Games', 'Video Games', 'Books'];
+    }
 }
 
 var products = [
   {
     "id": 0,
-    "title": "First Product",
+    "title": "Mac",
     "price": 24.99,
     "rating": 4.3,
+      "image":"/app/components/images/mac.jpg",
     "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "categories": ["electronics", "hardware"]
   },
   {
     "id": 1,
-    "title": "Second Product",
+    "title": "Window Desktop",
     "price": 64.99,
     "rating": 3.5,
+      "image":"/app/components/images/windowDesktop.jpg",
     "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "categories": ["books"]
   },
   {
     "id": 2,
-    "title": "Third Product",
+    "title": "Google Pixel 2",
     "price": 74.99,
     "rating": 4.2,
+      "image":"/app/components/images/google-pixel-02.jpg",
     "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "categories": ["electronics"]
   },
   {
     "id": 3,
-    "title": "Fourth Product",
+    "title": "IphoneX",
     "price": 84.99,
     "rating": 3.9,
+      "image":"/app/components/images/iphoneX.jpg",
     "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "categories": ["hardware"]
   },
   {
     "id": 4,
-    "title": "Fifth Product",
+    "title": "Ipad Pro",
     "price": 94.99,
     "rating": 5,
+      "image":"/app/components/images/ipad.jpg",
     "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "categories": ["electronics", "hardware"]
   },
   {
     "id": 5,
-    "title": "Sixth Product",
+    "title": "Samsung Tablet",
     "price": 54.99,
     "rating": 4.6,
+      "image":"/app/components/images/SamsungTablet.jpg",
     "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "categories": ["books"]
   }
