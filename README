@@ -1,0 +1,29 @@
+Make sure npm is installed in your machine
+Install all the packages needed:
+npm install
+In order to run this application:
+npm start
+
+
+------------------------------------------------------------------------------
+//-y option instruct npm to create the package.json configuration file with
+default settings, without prompting you for any options.
+npm init -y
+
+run the:
+npm run tsc
+ command, the transpiled hello_server.js file will be saved in the build directory.
+Start web server with:
+node build/hello_server.js
+
+Need to have Node's type-definition file to prevent TypeScript compilation errors.
+npm i @types/node --save
+
+To minimize manual coding, installing Express.
+A Node framework that provides a set of features required by all web applications.
+npm install express --save
+
+Save the express in the package.json file:
+npm i @types/express --save
+
+Go to localhost:8000

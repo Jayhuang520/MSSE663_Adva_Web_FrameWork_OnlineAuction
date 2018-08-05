@@ -3,12 +3,14 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "module": "commonjs",
-    "target": "ES5",
-    "noEmit": true,
-    "types":["es6-shim"]
+    "outDir": "build",
+    "target": "ES5"
+//    "noEmit": true
+//    "types":["es6-shim"]
   },
 
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "client"
   ]
 }
