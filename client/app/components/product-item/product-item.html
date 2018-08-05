@@ -1,0 +1,12 @@
+<div class="thumbnail">
+  <img style="width: 250px; height: 250px;" src={{product.image}}>
+  <div class="caption">
+    <h4 class="pull-right productPrice">{{ product.price | currency }}</h4>
+    <h4><a class="productTitle" [routerLink]="['/products', product.id]">{{ product.title }}</a></h4>
+    <p class="productDesc">{{ product.description }}</p>
+  </div>
+  <div class="ratings">
+    <auction-stars [rating]="product.rating"></auction-stars>
+  </div>
+</div>
+
